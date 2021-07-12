@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>组件之间的通讯 | vue-press-blog</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/images/logo.svg">
+    <meta name="description" content="基于vuepress搭建的博客">
+    
+    <link rel="preload" href="/assets/css/0.styles.e4d8b86b.css" as="style"><link rel="preload" href="/assets/js/app.9932a8db.js" as="script"><link rel="preload" href="/assets/js/2.3198985e.js" as="script"><link rel="preload" href="/assets/js/23.4a5f5ce3.js" as="script"><link rel="prefetch" href="/assets/js/10.e645116c.js"><link rel="prefetch" href="/assets/js/11.ba217165.js"><link rel="prefetch" href="/assets/js/12.f2320a39.js"><link rel="prefetch" href="/assets/js/13.73063530.js"><link rel="prefetch" href="/assets/js/14.0398e2d0.js"><link rel="prefetch" href="/assets/js/15.e35c4b7e.js"><link rel="prefetch" href="/assets/js/16.d0d1471b.js"><link rel="prefetch" href="/assets/js/17.26f739af.js"><link rel="prefetch" href="/assets/js/18.84223b7e.js"><link rel="prefetch" href="/assets/js/19.88b4658b.js"><link rel="prefetch" href="/assets/js/20.762adf01.js"><link rel="prefetch" href="/assets/js/21.f5d3f50b.js"><link rel="prefetch" href="/assets/js/22.010fe354.js"><link rel="prefetch" href="/assets/js/24.33c3376f.js"><link rel="prefetch" href="/assets/js/25.bbd9707d.js"><link rel="prefetch" href="/assets/js/26.afdc12e1.js"><link rel="prefetch" href="/assets/js/27.1d6a1ba2.js"><link rel="prefetch" href="/assets/js/28.a6bc8031.js"><link rel="prefetch" href="/assets/js/29.ad327571.js"><link rel="prefetch" href="/assets/js/3.07457b36.js"><link rel="prefetch" href="/assets/js/4.ba3164ba.js"><link rel="prefetch" href="/assets/js/5.75a3592b.js"><link rel="prefetch" href="/assets/js/6.0377ba0c.js"><link rel="prefetch" href="/assets/js/7.b9d71df1.js"><link rel="prefetch" href="/assets/js/8.83a14caa.js"><link rel="prefetch" href="/assets/js/9.97d00c0b.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.e4d8b86b.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/images/logo.svg" alt="vue-press-blog" class="logo"> <span class="site-name can-hide">vue-press-blog</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端基础" class="dropdown-title"><span class="title">前端基础</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端基础" class="mobile-dropdown-title"><span class="title">前端基础</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/FE-Base/html/index.html" class="nav-link">
+  html
+</a></li><li class="dropdown-item"><!----> <a href="/FE-Base/css/index.html" class="nav-link">
+  css
+</a></li><li class="dropdown-item"><!----> <a href="/FE-Base/JavaScript/index.html" class="nav-link">
+  JavaScript
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端框架" class="dropdown-title"><span class="title">前端框架</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端框架" class="mobile-dropdown-title"><span class="title">前端框架</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/FE-Frame/vue/index.html" class="nav-link">
+  vue
+</a></li><li class="dropdown-item"><!----> <a href="/FE-Frame/react/index.html" class="nav-link">
+  react
+</a></li></ul></div></div><div class="nav-item"><a href="/LUI/index.html" class="nav-link">
+  LUI
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端基础" class="dropdown-title"><span class="title">前端基础</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端基础" class="mobile-dropdown-title"><span class="title">前端基础</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/FE-Base/html/index.html" class="nav-link">
+  html
+</a></li><li class="dropdown-item"><!----> <a href="/FE-Base/css/index.html" class="nav-link">
+  css
+</a></li><li class="dropdown-item"><!----> <a href="/FE-Base/JavaScript/index.html" class="nav-link">
+  JavaScript
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端框架" class="dropdown-title"><span class="title">前端框架</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端框架" class="mobile-dropdown-title"><span class="title">前端框架</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/FE-Frame/vue/index.html" class="nav-link">
+  vue
+</a></li><li class="dropdown-item"><!----> <a href="/FE-Frame/react/index.html" class="nav-link">
+  react
+</a></li></ul></div></div><div class="nav-item"><a href="/LUI/index.html" class="nav-link">
+  LUI
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/FE-Frame/vue/vue-base.html" class="sidebar-link">vue-基础</a></li><li><a href="/FE-Frame/vue/vue-cli.html" class="sidebar-link">vue cli</a></li><li><a href="/FE-Frame/vue/vue-components.html" class="sidebar-link">vue组件化</a></li><li><a href="/FE-Frame/vue/vue-project-total.html" class="sidebar-link">小项目总结</a></li><li><a href="/FE-Frame/vue/vue-refs.html" aria-current="page" class="active sidebar-link">组件之间的通讯</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/FE-Frame/vue/vue-refs.html#root" class="sidebar-link">$root</a></li><li class="sidebar-sub-header"><a href="/FE-Frame/vue/vue-refs.html#parent" class="sidebar-link">$parent</a></li><li class="sidebar-sub-header"><a href="/FE-Frame/vue/vue-refs.html#ref" class="sidebar-link">$ref</a></li><li class="sidebar-sub-header"><a href="/FE-Frame/vue/vue-refs.html#children" class="sidebar-link">$children</a></li><li class="sidebar-sub-header"><a href="/FE-Frame/vue/vue-refs.html#依赖注入" class="sidebar-link">依赖注入</a></li></ul></li><li><a href="/FE-Frame/vue/vue-router.html" class="sidebar-link">vue-router</a></li><li><a href="/FE-Frame/vue/vue-slot.html" class="sidebar-link">vue-插槽</a></li><li><a href="/FE-Frame/vue/vuex.html" class="sidebar-link">VueX</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="组件之间的通讯"><a href="#组件之间的通讯" class="header-anchor">#</a> 组件之间的通讯</h1> <h2 id="root"><a href="#root" class="header-anchor">#</a> $root</h2> <p>在每一个 <code>new Vue</code> 的子组件中，都可以通过 <code>$root</code> 来访问根实例</p> <h2 id="parent"><a href="#parent" class="header-anchor">#</a> $parent</h2> <p><code>$parent</code> ，<code>$parent</code> 可以从一个子组件中访问父组件实例。</p> <p>但并不是所有情况下都可以用 <code>$parent</code> 。</p> <p>比如父组件为 <code>&lt;map&gt;</code>，子组件为 <code>marker</code> （标记的意思）。<code>marker</code> 可以通过 <code>this.$parent.getMap()</code> 从 <code>&lt;map&gt;</code> 中获取数据。</p> <p>当 <code>marker</code> 的父组件真正绝对只是 <code>map</code> 的时候，可以使用 <code>$parent</code> ，但如果 <code>marker</code> 可能充当了其他组件的子组件时，此时的 <code>this.$parent.getMap()</code> 获取到的数据却不是 <code>map</code> 中的数据。就像 vue 官方文档中所描述，</p> <div class="language-vue extra-class"><pre class="language-vue"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>map</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>region</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>marker</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>marker</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>region</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>map</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p><code>marker</code> 想访问 <code>map</code> 的数据变成了 <code>this.$parent.$parent.getMap()</code> 。</p> <blockquote><p><strong>在绝大多数情况下，触达父级组件会使得你的应用更难调试和理解，尤其是当你变更了父级组件的数据的时候。当我们稍后回看那个组件的时候，很难找出那个变更是从哪里发起的。</strong></p></blockquote> <h2 id="ref"><a href="#ref" class="header-anchor">#</a> $ref</h2> <p>使用子组件的时候，为子组件绑定 ref 属性，通过 <code>this.$refs='***' 来访问子组件</code></p> <p>当 <code>ref</code>  和  <code>v-for</code> 一起使用时，ref 得到的是包含了对应数据源的这些子组件的数组。如下：</p> <div class="language-vue extra-class"><pre class="language-vue"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>home<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>HelloWorld</span> <span class="token attr-name">v-for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>item in aa<span class="token punctuation">&quot;</span></span> <span class="token attr-name">:key</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>item<span class="token punctuation">&quot;</span></span> <span class="token attr-name">ref</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>item<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>HelloWorld</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+<span class="token keyword">import</span> HelloWorld <span class="token keyword">from</span> <span class="token string">'@/components/HelloWorld.vue'</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  name<span class="token operator">:</span> <span class="token string">'Home'</span><span class="token punctuation">,</span>
+  <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">return</span><span class="token punctuation">{</span>
+      aa<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'aa'</span><span class="token punctuation">,</span><span class="token string">'bb'</span><span class="token punctuation">,</span><span class="token string">'cc'</span><span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  components<span class="token operator">:</span> <span class="token punctuation">{</span>
+    HelloWorld
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token function">mounted</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>$refs<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+
+</code></pre></div><p>控制台打印出来的 ref 是三个 <code>HelloWorld</code> 组成的数组</p> <p><img src="https://gitee.com/haibolian/screenshot/raw/master/vue/image-20200517165816802.png" alt="ref-item"></p> <blockquote><p><code>$refs</code> 只会在组件渲染完成之后生效，并且它们不是响应式的。这仅作为一个用于直接操作子组件的“逃生舱”——你应该避免在模板或计算属性中访问 <code>$refs</code>。</p></blockquote> <h2 id="children"><a href="#children" class="header-anchor">#</a> $children</h2> <p>当前实例的直接子组件。</p> <blockquote><p><strong>节制地使用 <code>$parent</code> 和 <code>$children</code> - 它们的主要目的是作为访问组件的应急方法。更推荐用 props 和 events 实现父子组件通信</strong></p></blockquote> <h2 id="依赖注入"><a href="#依赖注入" class="header-anchor">#</a> 依赖注入</h2> <p>拿上面 <code>$parent</code>  例子来说，<code>$parent</code> 无法很好的扩展到更深层级的嵌套组件中，那么就引申出来了依赖注入。</p> <p>依赖注入用到两个实例选项： <code>provide</code> 和 <code>inject</code></p> <p><code>provide</code> 让我们指定想要提供给后代组件的数据/方法</p> <div class="language-vue extra-class"><pre class="language-vue"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>map</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>region</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>marker</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>marker</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>region</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>map</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p>在map中，新建实例选项<code>provide</code></p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token function-variable function">provide</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">{</span>
+    getMap<span class="token operator">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span>getMap
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>在其任何后代组件中，通过<code>inject</code> 来接收指定的想要添加的<code>provide</code></p> <div class="language-js extra-class"><pre class="language-js"><code>inject<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'getMap'</span><span class="token punctuation">]</span>
+</code></pre></div><p>实际上，可以把依赖注入看作是一个大范围的 <code>prop</code> ，其特点是，</p> <ul><li><p>祖先组件不需要知道哪些后代组件使用它提供的 property，</p></li> <li><p>后代组件不需要知道被注入的 property 来自哪里</p></li></ul> <p>依赖注入的负面影响：</p> <blockquote><p><strong>然而，依赖注入还是有负面影响的。它将你应用程序中的组件与它们当前的组织方式耦合起来，使重构变得更加困难。同时所提供的 property 是非响应式的。这是出于设计的考虑，因为使用它们来创建一个中心化规模化的数据跟<a href="https://cn.vuejs.org/v2/guide/components-edge-cases.html#%E8%AE%BF%E9%97%AE%E6%A0%B9%E5%AE%9E%E4%BE%8B" target="_blank" rel="noopener noreferrer">使用 <code>$root</code><span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>做这件事都是不够好的。如果你想要共享的这个 property 是你的应用特有的，而不是通用化的，或者如果你想在祖先组件中更新所提供的数据，那么这意味着你可能需要换用一个像 <a href="https://github.com/vuejs/vuex" target="_blank" rel="noopener noreferrer">Vuex<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> 这样真正的状态管理方案了。</strong></p></blockquote></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/FE-Frame/vue/vue-project-total.html" class="prev">
+        小项目总结
+      </a></span> <span class="next"><a href="/FE-Frame/vue/vue-router.html">
+        vue-router
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.9932a8db.js" defer></script><script src="/assets/js/2.3198985e.js" defer></script><script src="/assets/js/23.4a5f5ce3.js" defer></script>
+  </body>
+</html>

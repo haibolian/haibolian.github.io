@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>浅拷贝与深拷贝 | vue-press-blog</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/images/logo.svg">
+    <meta name="description" content="基于vuepress搭建的博客">
+    
+    <link rel="preload" href="/assets/css/0.styles.e4d8b86b.css" as="style"><link rel="preload" href="/assets/js/app.9932a8db.js" as="script"><link rel="preload" href="/assets/js/2.3198985e.js" as="script"><link rel="preload" href="/assets/js/12.f2320a39.js" as="script"><link rel="prefetch" href="/assets/js/10.e645116c.js"><link rel="prefetch" href="/assets/js/11.ba217165.js"><link rel="prefetch" href="/assets/js/13.73063530.js"><link rel="prefetch" href="/assets/js/14.0398e2d0.js"><link rel="prefetch" href="/assets/js/15.e35c4b7e.js"><link rel="prefetch" href="/assets/js/16.d0d1471b.js"><link rel="prefetch" href="/assets/js/17.26f739af.js"><link rel="prefetch" href="/assets/js/18.84223b7e.js"><link rel="prefetch" href="/assets/js/19.88b4658b.js"><link rel="prefetch" href="/assets/js/20.762adf01.js"><link rel="prefetch" href="/assets/js/21.f5d3f50b.js"><link rel="prefetch" href="/assets/js/22.010fe354.js"><link rel="prefetch" href="/assets/js/23.4a5f5ce3.js"><link rel="prefetch" href="/assets/js/24.33c3376f.js"><link rel="prefetch" href="/assets/js/25.bbd9707d.js"><link rel="prefetch" href="/assets/js/26.afdc12e1.js"><link rel="prefetch" href="/assets/js/27.1d6a1ba2.js"><link rel="prefetch" href="/assets/js/28.a6bc8031.js"><link rel="prefetch" href="/assets/js/29.ad327571.js"><link rel="prefetch" href="/assets/js/3.07457b36.js"><link rel="prefetch" href="/assets/js/4.ba3164ba.js"><link rel="prefetch" href="/assets/js/5.75a3592b.js"><link rel="prefetch" href="/assets/js/6.0377ba0c.js"><link rel="prefetch" href="/assets/js/7.b9d71df1.js"><link rel="prefetch" href="/assets/js/8.83a14caa.js"><link rel="prefetch" href="/assets/js/9.97d00c0b.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.e4d8b86b.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/images/logo.svg" alt="vue-press-blog" class="logo"> <span class="site-name can-hide">vue-press-blog</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端基础" class="dropdown-title"><span class="title">前端基础</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端基础" class="mobile-dropdown-title"><span class="title">前端基础</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/FE-Base/html/index.html" class="nav-link">
+  html
+</a></li><li class="dropdown-item"><!----> <a href="/FE-Base/css/index.html" class="nav-link">
+  css
+</a></li><li class="dropdown-item"><!----> <a href="/FE-Base/JavaScript/index.html" class="nav-link">
+  JavaScript
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端框架" class="dropdown-title"><span class="title">前端框架</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端框架" class="mobile-dropdown-title"><span class="title">前端框架</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/FE-Frame/vue/index.html" class="nav-link">
+  vue
+</a></li><li class="dropdown-item"><!----> <a href="/FE-Frame/react/index.html" class="nav-link">
+  react
+</a></li></ul></div></div><div class="nav-item"><a href="/LUI/index.html" class="nav-link">
+  LUI
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端基础" class="dropdown-title"><span class="title">前端基础</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端基础" class="mobile-dropdown-title"><span class="title">前端基础</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/FE-Base/html/index.html" class="nav-link">
+  html
+</a></li><li class="dropdown-item"><!----> <a href="/FE-Base/css/index.html" class="nav-link">
+  css
+</a></li><li class="dropdown-item"><!----> <a href="/FE-Base/JavaScript/index.html" class="nav-link">
+  JavaScript
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端框架" class="dropdown-title"><span class="title">前端框架</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端框架" class="mobile-dropdown-title"><span class="title">前端框架</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/FE-Frame/vue/index.html" class="nav-link">
+  vue
+</a></li><li class="dropdown-item"><!----> <a href="/FE-Frame/react/index.html" class="nav-link">
+  react
+</a></li></ul></div></div><div class="nav-item"><a href="/LUI/index.html" class="nav-link">
+  LUI
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/FE-Base/JavaScript/array.html" class="sidebar-link">数组</a></li><li><a href="/FE-Base/JavaScript/clone.html" aria-current="page" class="active sidebar-link">浅拷贝与深拷贝</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/FE-Base/JavaScript/clone.html#_1-浅拷贝" class="sidebar-link">1. 浅拷贝</a></li></ul></li><li><a href="/FE-Base/JavaScript/ES6-object-new-function.html" class="sidebar-link">ES6对象新增对象</a></li><li><a href="/FE-Base/JavaScript/ES6-set-and-map.html" class="sidebar-link">ES6之set和map</a></li><li><a href="/FE-Base/JavaScript/Function-type.html" class="sidebar-link">Function类型</a></li><li><a href="/FE-Base/JavaScript/JavaScript-data-type.html" class="sidebar-link">JavaScript-数据类型检测</a></li><li><a href="/FE-Base/JavaScript/js-string-function.html" class="sidebar-link">JavaScript字符串常用方法</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="浅拷贝与深拷贝"><a href="#浅拷贝与深拷贝" class="header-anchor">#</a> 浅拷贝与深拷贝</h1> <h2 id="_1-浅拷贝"><a href="#_1-浅拷贝" class="header-anchor">#</a> 1. 浅拷贝</h2> <h3 id="_1-1-object-assign"><a href="#_1-1-object-assign" class="header-anchor">#</a> 1.1 object.assign</h3> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">function</span> <span class="token function">cloneshallow</span><span class="token punctuation">(</span><span class="token parameter">target</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token keyword">let</span> cloneTarget <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+  <span class="token keyword">return</span> Object<span class="token punctuation">.</span><span class="token function">assign</span><span class="token punctuation">(</span>cloneTarget<span class="token punctuation">,</span>target<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">let</span> target <span class="token operator">=</span> <span class="token punctuation">{</span>
+  name<span class="token operator">:</span><span class="token string">'ming'</span><span class="token punctuation">,</span>
+  age<span class="token operator">:</span><span class="token number">18</span><span class="token punctuation">,</span>
+  hobby<span class="token operator">:</span><span class="token punctuation">[</span><span class="token string">'篮球'</span><span class="token punctuation">,</span><span class="token string">'足球'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  companies<span class="token operator">:</span><span class="token punctuation">{</span>
+    one<span class="token operator">:</span><span class="token string">'中国建设银行'</span><span class="token punctuation">,</span>
+    two<span class="token operator">:</span><span class="token string">'中国工商银行'</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">let</span> cloneTarget <span class="token operator">=</span> <span class="token function">cloneshallow</span><span class="token punctuation">(</span>target<span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'cloneTarget'</span><span class="token punctuation">,</span>cloneTarget<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// false</span>
+cloneTarget<span class="token punctuation">.</span>companies<span class="token punctuation">.</span>one <span class="token operator">=</span> <span class="token string">'招商银行'</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>target<span class="token punctuation">.</span>companies<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// {one: &quot;招商银行&quot;, two: &quot;中国工商银行&quot;}</span>
+</code></pre></div><p>从上面可以看到 <code>object.assign</code> 可以实现浅拷贝，但它有几点要注意：</p> <ul><li>它不会拷贝对象的继承属性；</li> <li>它不会拷贝对象的不可枚举的属性；</li> <li>可以拷贝 Symbol 类型的属性。</li></ul> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token comment">// 它不会拷贝对象的继承属性</span>
+<span class="token keyword">class</span> <span class="token class-name">Person</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token keyword">let</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span> a<span class="token operator">:</span><span class="token punctuation">{</span> b<span class="token operator">:</span><span class="token number">1</span> <span class="token punctuation">}</span> <span class="token punctuation">,</span> b <span class="token operator">:</span> <span class="token number">2</span> <span class="token punctuation">}</span>
+obj<span class="token punctuation">.</span>__proto__ <span class="token operator">=</span> Person
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">// obj.__proto__ = Person</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>Object<span class="token punctuation">.</span><span class="token function">assign</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>obj<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// {}.__proto__ = Object</span>
+</code></pre></div><div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token comment">// 它不会拷贝对象的不可枚举的属性</span>
+<span class="token keyword">let</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span> a<span class="token operator">:</span><span class="token punctuation">{</span> b<span class="token operator">:</span><span class="token number">1</span> <span class="token punctuation">}</span> <span class="token punctuation">,</span> b <span class="token operator">:</span> <span class="token number">2</span> <span class="token punctuation">,</span> sym <span class="token operator">:</span> <span class="token function">Symbol</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">}</span>
+Object<span class="token punctuation">.</span><span class="token function">defineProperty</span><span class="token punctuation">(</span>obj<span class="token punctuation">,</span><span class="token string">'b'</span><span class="token punctuation">,</span><span class="token punctuation">{</span>
+	enumerable<span class="token operator">:</span><span class="token boolean">false</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token comment">// 可以拷贝 Symbol 类型的属性</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>Object<span class="token punctuation">.</span><span class="token function">assign</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>obj<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// { a:{b:1}, sym:Symbol(1) }</span>
+</code></pre></div><h3 id="_1-2-扩展运算符"><a href="#_1-2-扩展运算符" class="header-anchor">#</a> 1.2 扩展运算符</h3> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">class</span> <span class="token class-name">Person</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token keyword">let</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span> a<span class="token operator">:</span><span class="token punctuation">{</span> b<span class="token operator">:</span><span class="token number">1</span> <span class="token punctuation">}</span> <span class="token punctuation">,</span> b <span class="token operator">:</span> <span class="token number">2</span> <span class="token punctuation">,</span>sym<span class="token operator">:</span><span class="token function">Symbol</span><span class="token punctuation">(</span><span class="token number">12</span><span class="token punctuation">)</span><span class="token punctuation">}</span>
+obj<span class="token punctuation">.</span>__proto__ <span class="token operator">=</span> Person
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token punctuation">;</span>
+Object<span class="token punctuation">.</span><span class="token function">defineProperty</span><span class="token punctuation">(</span>obj<span class="token punctuation">,</span><span class="token string">'b'</span><span class="token punctuation">,</span><span class="token punctuation">{</span>
+	enumerable<span class="token operator">:</span><span class="token boolean">false</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token operator">...</span>obj <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+</code></pre></div><p>扩展运算符的方式和 <code>object.assign</code> 方式运行的结果相同，同样有以下几点需要注意：</p> <ul><li>它不会拷贝对象的继承属性；</li> <li>它不会拷贝对象的不可枚举的属性；</li> <li>可以拷贝 Symbol 类型的属性。</li></ul> <h3 id="_1-3-数组concat"><a href="#_1-3-数组concat" class="header-anchor">#</a> 1.3 数组concat</h3> <p><code>concat</code> 也是一个浅拷贝。因此，当用 <code>concat</code> 链接两个数组，后期修改原数组时，需要考虑其中的引用类型，因为它会影响该连接后的的数组。</p> <div class="language-JavaScript extra-class"><pre class="language-javascript"><code><span class="token keyword">let</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> newArr <span class="token operator">=</span> arr<span class="token punctuation">.</span><span class="token function">concat</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+newArr<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">100</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// [ 1, 2, 3 ]</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>newArr<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// [ 1, 100, 3 ]</span>
+</code></pre></div><h3 id="_1-4-数组slice"><a href="#_1-4-数组slice" class="header-anchor">#</a> 1.4 数组slice</h3> <p>和 <code>concat</code> 一样，<code>slice</code> 只是拷贝第一层</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">let</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>val<span class="token operator">:</span> <span class="token number">4</span><span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> newArr <span class="token operator">=</span> arr<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+newArr<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">.</span>val <span class="token operator">=</span> <span class="token number">1000</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">//[ 1, 2, { val: 1000 } ]</span>
+</code></pre></div><h3 id="_1-5-手工实现浅拷贝"><a href="#_1-5-手工实现浅拷贝" class="header-anchor">#</a> 1.5 手工实现浅拷贝</h3></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/FE-Base/JavaScript/array.html" class="prev">
+        数组
+      </a></span> <span class="next"><a href="/FE-Base/JavaScript/ES6-object-new-function.html">
+        ES6对象新增对象
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.9932a8db.js" defer></script><script src="/assets/js/2.3198985e.js" defer></script><script src="/assets/js/12.f2320a39.js" defer></script>
+  </body>
+</html>
